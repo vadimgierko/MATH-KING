@@ -37,7 +37,7 @@ function App() {
     return (
         <div className="container">
             <div className="row justify-content-center">
-                <h1 className="display-3">MATH KING</h1> 
+                <h1 className="display-5">MATH KING</h1> 
             </div>
             <div className="row justify-content-center my-3">
                 <div className="btn-group">
@@ -48,7 +48,7 @@ function App() {
                 </div>
             </div>
             <div className="row justify-content-center">
-                {expression ? <div className="m-3"><h2 className="display-1">{expression}</h2></div> : null}
+                {expression ? <div className="m-3"><h2 className="display-4">{expression}</h2></div> : null}
             </div>
             {expression ?
             <div className="row justify-content-center">
@@ -67,7 +67,7 @@ function App() {
             null
             }
             <div className="row justify-content-center">
-                {message ? <h1 className="text-success display-2">{message}</h1> : null}
+                {message ? <h1 className="text-success display-5">{message}</h1> : null}
             </div>
         </div>
     );
