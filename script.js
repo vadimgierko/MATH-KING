@@ -32,38 +32,42 @@ function App() {
         console.log("result = " + result);
         console.log("input = " + input);
         result === +(input) ? setMessage("Correct!") : setMessage("Oops... Try again!");
+        
     }
     return (
         <div className="container">
             <div className="row justify-content-center">
-                <h1>MATH KING</h1> 
+                <h1 className="display-3">MATH KING</h1> 
             </div>
             <div className="row justify-content-center my-3">
                 <div className="btn-group">
-                    <button className="btn btn-lg btn-primary rounded-circle mx-2" onClick={() => generateExpression("+")}>+</button>
-                    <button className="btn btn-lg btn-success rounded-circle mx-2" onClick={() => generateExpression("-")}>-</button>
-                    <button className="btn btn-lg btn-warning rounded-circle mx-2" onClick={() => generateExpression("/")}>/</button>
-                    <button className="btn btn-lg btn-danger rounded-circle mx-2" onClick={() => generateExpression("*")}>*</button>
+                    <button className="btn btn-lg btn-primary rounded-circle mx-3" onClick={() => generateExpression("+")}>+</button>
+                    <button className="btn btn-lg btn-success rounded-circle mx-3" onClick={() => generateExpression("-")}>-</button>
+                    <button className="btn btn-lg btn-warning rounded-circle mx-3" onClick={() => generateExpression("/")}>/</button>
+                    <button className="btn btn-lg btn-danger rounded-circle mx-3" onClick={() => generateExpression("*")}>*</button>
                 </div>
             </div>
             <div className="row justify-content-center">
-                <div className="m-3"><h2>{expression ? expression : null}</h2></div>
-                <div className="m-3"><h2><i className="bi bi-arrow-right-square"></i></h2></div>
+                {expression ? <div className="m-3"><h2 className="display-1">{expression}</h2></div> : null}
+            </div>
+            {expression ?
+            <div className="row justify-content-center">
                 <div className="m-3">
-                    <h2><input className="form-control" placeholder="input the answer" onChange={(e) => setInput(e.target.value)}></input></h2>
+                    <h1>
+                        <input className="form-control form-control-lg" placeholder="input the answer" onChange={(e) => setInput(e.target.value)}></input>
+                    </h1>
                 </div>
                 <div className="m-3">
-                    <h2>
-                        <i
-                            className="bi bi-check-square-fill text-success"
-                            style={{cursor: "pointer"}}
-                            onClick={check}>    
-                        </i>
-                    </h2>
+                    <h1>
+                        <i className="bi bi-check-square-fill text-success" style={{cursor: "pointer"}} onClick={check}></i>
+                    </h1>
                 </div>
             </div>
+            :
+            null
+            }
             <div className="row justify-content-center">
-                <h3>{message ? message : null}</h3>
+                {message ? <h1 className="text-success display-2">{message}</h1> : null}
             </div>
         </div>
     );
